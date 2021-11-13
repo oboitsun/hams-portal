@@ -28,3 +28,12 @@ body {
 .abs-centering {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }
+
+.back-home-button {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  box-sizing: border-box;
+  background: #d88535;
+  border: 3px solid #ad6016;
+}

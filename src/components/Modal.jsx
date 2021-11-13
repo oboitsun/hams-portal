@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setShowModal } from "../reducers/uiReducer";
 import ContactUs from "./ContactUs/ContactUs";
 
-export default function Modal({ showModal, setShowModal }) {
+export default function Modal() {
+  const showModal = useSelector((state) => state.uiState.showModal);
+  const dispatch = useDispatch();
   return (
     <div
       className={`w-screen h-screen fixed top-0 left-0 flex justify-center items-center transition-all ${
@@ -10,7 +14,7 @@ export default function Modal({ showModal, setShowModal }) {
     >
       <div
         onClick={() => {
-          setShowModal(false);
+          dispatch(setShowModal(false));
         }}
         className="backdrop absolute w-full h-full top-0 left-0 bg-black/70"
       ></div>
@@ -21,7 +25,7 @@ export default function Modal({ showModal, setShowModal }) {
           </p>
           <img
             onClick={() => {
-              setShowModal(false);
+              dispatch(setShowModal(false));
             }}
             className="block w-auto"
             src="assets/close-icon.svg"

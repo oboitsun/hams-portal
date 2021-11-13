@@ -5,17 +5,15 @@
   line-height: 1;
   font-size: 20px;
   color: white;
-  grid-template-columns: 48px 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 24px;
-  border-radius: 20px;
-  place-items: center;
+
+  align-items: center;
   padding: 0 20px;
   height: 80px;
-}
-.other {
-  border: 5px dashed $dark-turf;
-}
-.user {
-  background-color: $dark-turf;
-  box-sizing: border-box;
+  .heading {
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700;
+  }
 }

@@ -1,54 +1,67 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
-
+import ButtonTemplate from "../ButtonTemplate";
+const buttons = [
+  {
+    href: "/my-hams",
+    text: "My Hamsters",
+    iconSrc: "assets/navigation-icons/star.svg",
+    color: "#D88535",
+    strokeColor: "#AD6016",
+    textColor: "my-hams",
+  },
+  {
+    href: "/minigames",
+    text: "Mini Games",
+    iconSrc: "assets/navigation-icons/play.svg",
+    color: "#9E9171",
+    strokeColor: "#696251",
+    textColor: "mini-games",
+  },
+  {
+    href: "/leaderboard",
+    text: "Leaderboard",
+    iconSrc: "assets/navigation-icons/leaderboard.svg",
+    color: "#252525",
+    strokeColor: "#000",
+    textColor: "leader",
+  },
+  {
+    href: "/store",
+    text: "Store",
+    iconSrc: "assets/navigation-icons/store.svg",
+    color: "#FFD83A",
+    strokeColor: "#ba970a",
+    textColor: "store",
+  },
+  {
+    href: "/marketplace",
+    text: "Marketplace",
+    iconSrc: "assets/navigation-icons/marketplace.svg",
+    color: "#ABA6A5",
+    strokeColor: "#635e5d",
+    textColor: "marketplace",
+  },
+  {
+    href: "/settings",
+    text: "Settings",
+    iconSrc: "assets/navigation-icons/settings.svg",
+    color: "#976D34",
+    strokeColor: "#4D3719",
+    textColor: "settings",
+  },
+];
 export default function Navigation() {
-  const buttons = [
-    {
-      name: "my dino",
-      icon: "../../assets/my-dino-icon.svg",
-      to: "/my-dinos",
-      className: "my-dinos",
-    },
-    {
-      name: "my eggs",
-      icon: "../../assets/my-eggs-icon.svg",
-      to: "/my-eggs",
-      className: "my-eggs",
-    },
-    {
-      name: "mini games",
-      icon: "../../assets/minigames-icon.svg",
-      to: "/minigames",
-      className: "minigames",
-    },
-    {
-      name: "leaderboard",
-      icon: "../../assets/leaderboard-icon.svg",
-      to: "/leaderboard",
-      className: "leader",
-    },
-    {
-      name: "store",
-      icon: "../../assets/cart-icon.svg",
-      to: "/store",
-      className: "store",
-    },
-    {
-      name: "marketplace",
-      icon: "../../assets/market-icon.svg",
-      to: "/marketplace",
-      className: "market",
-    },
-  ];
   return (
-    <div className="grid grid-cols-2 gap-5">
-      <Banner />
-      {buttons.map((btn) => (
-        <Link key={btn.name} to={btn.to}>
-          <div key={btn.name} className={`dashboard-button ${btn.className}`}>
-            <img className="mb-3" src={btn.icon} alt="icon" />
-            {btn.name}
-          </div>
+    <div className="navigation-buttons">
+      {buttons.map((btn, i) => (
+        <Link key={`${i}_${btn.text}`} to={btn.href}>
+          <ButtonTemplate color={btn.color} strokeColor={btn.strokeColor}>
+            <div className={` button-text-container ${btn.textColor}`}>
+              <img src={btn.iconSrc} alt={btn.text} />{" "}
+              <span className="ml-2">{btn.text}</span>
+            </div>
+          </ButtonTemplate>
         </Link>
       ))}
     </div>

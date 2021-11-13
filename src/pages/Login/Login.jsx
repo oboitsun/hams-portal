@@ -7,6 +7,7 @@ import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
 import loginBG from "/assets/bg-login.png";
 import Modal from "../../components/Modal";
+import ButtonTemplate from "../../components/ButtonTemplate";
 
 export default function Login(props) {
   let navigate = useNavigate();
@@ -19,9 +20,27 @@ export default function Login(props) {
     navigate(from, { replace: true });
   };
   const wallets = [
-    { name: "stoic", onClick: handleLogin },
-    { name: "plug", onClick: handleLogin },
-    { name: "earth", onClick: handleLogin },
+    {
+      name: "stoic",
+      onClick: handleLogin,
+      btnStyle: "turf",
+      strokeColor: "#696251",
+      color: "#9E9171",
+    },
+    {
+      name: "plug",
+      onClick: handleLogin,
+      btnStyle: "crimson",
+      strokeColor: "#AD6016",
+      color: "#D88535",
+    },
+    {
+      name: "earth",
+      onClick: handleLogin,
+      btnStyle: "charcoal",
+      strokeColor: "#000",
+      color: "#252525",
+    },
   ];
   const [showModal, setShowModal] = useState(false);
   return (
@@ -30,26 +49,41 @@ export default function Login(props) {
         <LoginHeader />
       </div>
       <img className="background" src={loginBG} alt="bg" />
-      <div className="login-window ">
-        <img className="logo w-full" src="../assets/logo.png" alt="logo" />
-        <p className="heading text-border">Lorem Ipsum is simply dummy text</p>
-        <div className="grid gap-6 w-full">
-          {wallets.map((wallet, i) => (
-            <button key={i} className={`wallet ${wallet.name}`} onClick={wallet.onClick}>
-              connect {wallet.name} wallet
-            </button>
-          ))}
+      <div className="shade-gradient"></div>
+      <div className="my-container">
+        <div className="login-window ">
+          <p className="heading font-creep">
+            Enter the
+            <br />
+            Haunted house
+          </p>
+          <div className="grid gap-6 w-full">
+            {wallets.map((wallet, i) => (
+              <ButtonTemplate
+                color={wallet.color}
+                strokeColor={wallet.strokeColor}
+                key={i}
+                type={wallet.btnStyle}
+                className={`wallet ${wallet.name}`}
+                onClick={wallet.onClick}
+              >
+                <p className="text-center z-10 relative"> connect {wallet.name} wallet</p>
+              </ButtonTemplate>
+            ))}
+          </div>
+          <div className="w-full h-1 bg-white opacity-20 my-8"></div>
+          <p className="text-white font-bold text-sm self-start">Help Center</p>
+        </div>
+        <div className="absolute bottom-10 w-full left-0 z-[2]">
+          <LoginFooter
+            onClick={() => {
+              setShowModal(true);
+            }}
+            login
+          />
         </div>
       </div>
-      <div className="absolute bottom-10 w-full left-0 z-[2]">
-        <LoginFooter
-          onClick={() => {
-            setShowModal(true);
-          }}
-          login
-        />
-      </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal />
     </div>
   );
 }

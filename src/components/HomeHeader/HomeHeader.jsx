@@ -3,6 +3,7 @@ import "./home-header.scss";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../reducers/uiReducer";
 import { Link } from "react-router-dom";
+import ButtonTemplate from "../ButtonTemplate";
 export default function HomeHeader() {
   const dispatch = useDispatch();
   const logOut = () => {
@@ -15,12 +16,14 @@ export default function HomeHeader() {
       </Link>
       <div className="flex items-center gap-5">
         <img className="w-auto" src="../../assets/dfinity-logo.png" alt="Dfinity logo" />
-        <div className="header-balance">2.70195258 ICP</div>
-        <button onClick={logOut} className="disconnect-button btn-filled">
-          <div className="w-1/2 wallet-id">xaj2u-2jdsadasd0dsad0sada0das</div>
-          <div className="w-1/2">Disconnect</div>
-        </button>
-        <button className="settings">my settings</button>
+        <div className="header-balance min-w-max">2.70195258 ICP</div>
+        <div className="w-full">
+          <ButtonTemplate color="#D88535" strokeColor="#AD6016">
+            <p className="text-white text-center font-bold relative z-10 px-5">
+              Disconnect
+            </p>
+          </ButtonTemplate>
+        </div>
       </div>
     </div>
   );

@@ -5,9 +5,11 @@ export default function SectionHeaderBackNav({ pageName = "" }) {
   return (
     <div className="w-full flex items-center">
       <Link to="/">
-        <img className="" src="/assets/header-back-button.svg" alt="back to home" />
+        <div className="back-home-button">
+          <img className="abs-centering" src="/assets/back-icon.svg" alt="back to home" />
+        </div>
       </Link>
-      <p className="text-border text-3xl text-white ml-6">{pageName}</p>
+      <p className="capitalize font-bold text-2xl text-white ml-6">{pageName}</p>
     </div>
   );
 }
