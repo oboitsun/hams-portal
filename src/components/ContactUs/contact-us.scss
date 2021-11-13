@@ -1,7 +1,5 @@
 @import "../../variables.scss";
 #contact-us {
-  padding: 40px 0;
-
   .contact-grid {
     display: grid;
     gap: 24px;
@@ -10,17 +8,17 @@
     background-color: transparent;
     padding: 20px;
     width: 100%;
-    color: white;
-    border-radius: 20px;
-    border: 3px solid white;
+    color: black;
+    font-weight: 700;
+    border: 3px solid #696251;
   }
   .form-input::placeholder {
-    color: white;
+    color: black;
   }
   .submit {
     margin-top: 24px;
     align-self: flex-end;
-    width: 50%;
+    height: 72px;
     justify-self: flex-end;
     padding: 16px 40px;
     color: #fff;

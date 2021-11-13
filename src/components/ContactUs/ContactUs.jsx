@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonTemplate from "../ButtonTemplate";
 import "./contact-us.scss";
 
 export default function ContactUs() {
@@ -17,11 +18,12 @@ export default function ContactUs() {
 
             <textarea
               placeholder="Comment"
-              className="form-input comment"
-              rows={4}
+              className="form-input comment resize-none"
             ></textarea>
           </div>
-          <input className="submit" type="submit" value="REQUEST A CALL BACK" />
+          <ButtonTemplate type="submit" color="#D88535" strokeColor="#AD6016">
+            <p className="relative z-10 text-center w-full">Request a Callback</p>
+          </ButtonTemplate>
         </form>
       </div>
     </div>

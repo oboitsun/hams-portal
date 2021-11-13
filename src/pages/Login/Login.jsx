@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../reducers/uiReducer";
+import { setShowModal, setUser } from "../../reducers/uiReducer";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
@@ -42,7 +42,7 @@ export default function Login(props) {
       color: "#252525",
     },
   ];
-  const [showModal, setShowModal] = useState(false);
+
   return (
     <div id="login-page" className="w-full min-h-screen overflow-hidden relative">
       <div className="absolute top-10 w-full left-0 z-[2]">
@@ -72,15 +72,17 @@ export default function Login(props) {
             ))}
           </div>
           <div className="w-full h-1 bg-white opacity-20 my-8"></div>
-          <p className="text-white font-bold text-sm self-start">Help Center</p>
+          <button
+            onClick={() => {
+              dispatch(setShowModal(true));
+            }}
+            className="text-white font-bold text-sm self-start"
+          >
+            Help Center
+          </button>
         </div>
         <div className="absolute bottom-10 w-full left-0 z-[2]">
-          <LoginFooter
-            onClick={() => {
-              setShowModal(true);
-            }}
-            login
-          />
+          <LoginFooter login />
         </div>
       </div>
       <Modal />
