@@ -35,7 +35,7 @@ const buttons = [
     textColor: "store",
   },
   {
-    href: "/marketplace",
+    href: "https://entrepot.app/marketplace/hauntedhamsters",
     text: "Marketplace",
     iconSrc: "assets/navigation-icons/marketplace.svg",
     color: "#ABA6A5",
@@ -54,16 +54,27 @@ const buttons = [
 export default function Navigation() {
   return (
     <div className="navigation-buttons">
-      {buttons.map((btn, i) => (
-        <Link key={`${i}_${btn.text}`} to={btn.href}>
-          <ButtonTemplate color={btn.color} strokeColor={btn.strokeColor}>
-            <div className={` button-text-container ${btn.textColor}`}>
-              <img src={btn.iconSrc} alt={btn.text} />{" "}
-              <span className="ml-2">{btn.text}</span>
-            </div>
-          </ButtonTemplate>
-        </Link>
-      ))}
+      {buttons.map((btn, i) =>
+        btn.text === "Marketplace" ? (
+          <a href={btn.href}>
+            <ButtonTemplate color={btn.color} strokeColor={btn.strokeColor}>
+              <div className={` button-text-container ${btn.textColor}`}>
+                <img src={btn.iconSrc} alt={btn.text} />{" "}
+                <span className="ml-2">{btn.text}</span>
+              </div>
+            </ButtonTemplate>
+          </a>
+        ) : (
+          <Link key={`${i}_${btn.text}`} to={btn.href}>
+            <ButtonTemplate color={btn.color} strokeColor={btn.strokeColor}>
+              <div className={` button-text-container ${btn.textColor}`}>
+                <img src={btn.iconSrc} alt={btn.text} />{" "}
+                <span className="ml-2">{btn.text}</span>
+              </div>
+            </ButtonTemplate>
+          </Link>
+        )
+      )}
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Dropdown from "../../components/Dropdown";
-import MarketplaceCard from "../../components/MarketplaceCard";
+import MyHamCard from "../../components/MyHamCard/MyHamCard";
+import Pagination from "../../components/Pagination";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
-import { cards } from "./db";
-import Pagination from "./Pagination";
+import { hams } from "../MyHams/db";
+
 const sortBy = [
   {
     value: "rarity",
@@ -29,7 +30,7 @@ export default function Marketplace() {
   const [type, setType] = useState("all");
   const [rarity, setRarity] = useState("all");
 
-  const sortedFiltered = cards
+  const sortedFiltered = hams
     .filter((card) => card.type === type || (type === "all" && card))
     .filter((card) => card.rarity === rarity || (rarity === "all" && card));
   const [page, setPage] = useState(1);
@@ -63,8 +64,8 @@ export default function Marketplace() {
 
       {paginated.length > 0 ? (
         <div className="grid grid-cols-4 gap-x-5 gap-y-10 pt-10">
-          {paginated.map((card, i) => (
-            <MarketplaceCard key={i} card={card} />
+          {paginated.map((ham, i) => (
+            <MyHamCard key={i} ham={ham} />
           ))}
         </div>
       ) : (
@@ -86,7 +87,7 @@ export default function Marketplace() {
       <div className="flex">
         <Pagination
           perPage={perPage}
-          total={cards.length}
+          total={hams.length}
           currentPage={page}
           setCurrentPage={setPage}
         />
