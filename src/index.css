@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Montserrat:wght@500;600;700;800&display=swap");
 @font-face {
   font-family: "Frightmare";
-  src: local("Frightmare"), url(public/assets/font/Frightmare.ttf) format("truetype");
+  src: local("Frightmare"), url(/font/Frightmare.ttf) format("truetype");
 }
 @tailwind base;
 @tailwind components;
