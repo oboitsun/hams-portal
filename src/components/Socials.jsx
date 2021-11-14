@@ -4,7 +4,7 @@ export default function Socials() {
   return (
     <div className="flex gap-10">
       {/* instagram icon */}
-      <a href="https://instagram.com">
+      <a href="https://instagram.com/hauntedhamsters">
         <svg
           width="24"
           height="24"
@@ -26,7 +26,7 @@ export default function Socials() {
         </svg>
       </a>
       {/* discord icon */}
-      <a href="https://discord.com">
+      <a href="https://discord.com/invite/rngMQQxa">
         <svg
           width="26"
           height="26"
@@ -50,7 +50,7 @@ export default function Socials() {
         </svg>
         {/* twitter icon */}
       </a>
-      <a href="https://twitter.com">
+      <a href="http://twitter.com/hauntedhamsters">
         <svg
           width="24"
           height="24"
