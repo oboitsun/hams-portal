@@ -40,7 +40,7 @@ function App() {
             <Route path="/help" element={<HelpCenter />} />
           </AnimatePresence>
         </Route>
-      </Routes>{" "}
+      </Routes>
     </div>
   );
 }
