@@ -24,14 +24,14 @@ export default function MyHams() {
         <SectionHeaderBackNav pageName="My Hamsters" />
         <div></div>
         <div></div>
-        <Link className="block full" to={btn.href}>
+        <a href="https://entrepot.app/marketplace/hauntedhamsters">
           <ButtonTemplate color={btn.color} strokeColor={btn.strokeColor}>
             <div className={` button-text-container ${btn.textColor}`}>
               <img src={btn.iconSrc} alt={btn.text} />{" "}
               <span className="ml-2 relative z-10 text-[#635E5D]">{btn.text}</span>
             </div>
           </ButtonTemplate>
-        </Link>
+        </a>
       </div>
       <div className="hams-grid">
         {paginated.map((ham, i) => (

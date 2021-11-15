@@ -19,6 +19,7 @@ export default function Login(props) {
     dispatch(setUser(true));
     navigate(from, { replace: true });
   };
+  console.log("rendered");
   const wallets = [
     {
       name: "stoic",

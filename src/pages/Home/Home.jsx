@@ -24,7 +24,7 @@ export default function Home() {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="w-full h-full  pt-14 pb-12 flex flex-col flex-grow justify-between"
         >

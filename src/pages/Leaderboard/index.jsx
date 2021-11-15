@@ -2,12 +2,12 @@ import React from "react";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 import "./leaderboard.scss";
 const leaderboard = [
-  { id: 1, userName: "sergey", score: 2000 },
-  { id: 2, userName: "sergey", score: 2000 },
-  { id: 3, userName: "sergey", score: 2000 },
-  { id: 4, userName: "sergey", score: 2000 },
-  { id: 5, userName: "sergey", score: 2000 },
-  { id: 6, userName: "sergey", score: 2000 },
+  { id: 1, userName: "Witch", score: 2000 },
+  { id: 2, userName: "Dracula", score: 1500 },
+  { id: 3, userName: "Devil", score: 1000 },
+  { id: 4, userName: "Crazy Professor", score: 500 },
+  { id: 5, userName: "Fish Man ", score: 200 },
+  { id: 6, userName: "Ghost", score: 100 },
 ];
 export default function Leaderboard() {
   const userId = 4;

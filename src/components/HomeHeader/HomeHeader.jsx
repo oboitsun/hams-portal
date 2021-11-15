@@ -18,7 +18,7 @@ export default function HomeHeader() {
         <img className="w-auto" src="../../assets/dfinity-logo.png" alt="Dfinity logo" />
         <div className="header-balance min-w-max">2.70195258 ICP</div>
         <div className="w-full">
-          <ButtonTemplate color="#D88535" strokeColor="#AD6016">
+          <ButtonTemplate onClick={logOut} color="#D88535" strokeColor="#AD6016">
             <p className="text-white text-center font-bold relative z-10 px-5">
               Disconnect
             </p>
